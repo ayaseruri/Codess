@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+def AndroidVersion = '25.0.1'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:$AndroidVersion"
+    compile "com.android.support:recyclerview-v7:$AndroidVersion"
+
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.alibaba:fastjson:1.1.54.android'
+
+    compile 'io.reactivex:rxjava:1.2.3'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.8.2@aar'
+
+    compile 'com.trello:rxlifecycle-android:1.0'
+
+    compile 'com.github.traex:RippleEffect:df5f9e4456'
+
+    compile 'com.github.johnpersano:supertoasts:2.0'
+
+    compile 'com.orhanobut:logger:1.15'
+    
+    compile 'jp.wasabeef:recyclerview-animators:2.2.4'
+}
